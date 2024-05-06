@@ -1,0 +1,451 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#"
+     xml:base="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#actedIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#actedIn">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Actor"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Film"/>
+        <rdfs:comment>Relates an Actor to a Film in which they have acted.</rdfs:comment>
+        <rdfs:label>acted in</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#belongsTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#belongsTo">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:comment>Specifies the affiliation of an individual, such as a player, to a club or organization.</rdfs:comment>
+        <rdfs:label>belongs to</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#wrote -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#wrote">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Writer"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#WrittenWork"/>
+        <rdfs:comment>Relates a Writer to a WrittenWork they have authored.</rdfs:comment>
+        <rdfs:label>wrote</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topObjectProperty -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#topObjectProperty">
+        <rdfs:label>top object property</rdfs:label>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Actor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Actor">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#actedIn"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Film"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Person"/>
+        <rdfs:comment>Represents an individual who is an actor, involved in acting in films.</rdfs:comment>
+        <rdfs:isDefinedBy rdf:resource="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Person"/>
+        <rdfs:label>actor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#ArtisticWork -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#ArtisticWork">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Work"/>
+        <rdfs:comment>Denotes a work of art, which is a creative or imaginative expression.</rdfs:comment>
+        <rdfs:label>artistic work</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#BasketballClub -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#BasketballClub">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#SportClub"/>
+        <rdfs:comment>Represents a club specifically associated with basketball.</rdfs:comment>
+        <rdfs:label>basketball club</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#BasketballPlayer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#BasketballPlayer">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#belongsTo"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#BasketballClub"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Sportsman"/>
+        <rdfs:comment>Represents an individual who plays basketball and is affiliated with a basketball club.</rdfs:comment>
+        <rdfs:label>basketball player</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Book -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Book">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#WrittenWork"/>
+        <rdfs:comment>Represents a book, a written work that is typically bound and consists of pages, often containing literary content.</rdfs:comment>
+        <rdfs:label>book</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Film -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Film">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#ArtisticWork"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#WrittenWork"/>
+        <rdfs:comment>Represents a film, a specific type of artistic work typically presented in a cinematic form.</rdfs:comment>
+        <rdfs:label>film</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#FootballClub -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#FootballClub">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#SportClub"/>
+        <rdfs:comment>Represents a football club, a sports club specifically associated with football activities.</rdfs:comment>
+        <rdfs:label>football club</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#FootballPlayer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#FootballPlayer">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#belongsTo"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#FootballClub"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Sportsman"/>
+        <rdfs:comment>Represents a football player, an individual who plays football and is associated with a football club.</rdfs:comment>
+        <rdfs:label>football player</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Journal -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Journal">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#WrittenWork"/>
+        <rdfs:comment>Represents a journal, a written work that typically contains articles, reports, or other scholarly or news-related content.</rdfs:comment>
+        <rdfs:label>journal</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Journalist -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Journalist">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#wrote"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Journal"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Writer"/>
+        <rdfs:comment>Represents a journalist, an individual who writes or contributes to journalistic works such as articles or reports.</rdfs:comment>
+        <rdfs:label>journalist</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Novelist -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Novelist">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#wrote"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Book"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Writer"/>
+        <rdfs:comment>Represents a novelist, an individual who writes and creates fictional books or novels.</rdfs:comment>
+        <rdfs:label>novelist</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Organization -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Organization">
+        <rdfs:comment>Represents an organization, a generic concept for a group or entity formed for a particular purpose or carrying out activities.</rdfs:comment>
+        <rdfs:label>organization</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Person -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Person">
+        <rdfs:comment>Represents an individual person.</rdfs:comment>
+        <rdfs:label>person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Poem -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Poem">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#WrittenWork"/>
+        <rdfs:comment>Represents a poem, a type of literary work characterized by expressive and rhythmic qualities, often in verse form.</rdfs:comment>
+        <rdfs:label>poem</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Poet -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Poet">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#wrote"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Poem"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Writer"/>
+        <rdfs:comment>Represents a poet, an individual who writes and creates poems.</rdfs:comment>
+        <rdfs:label>poet</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#SportClub -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#SportClub">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Organization"/>
+        <rdfs:comment>Represents a sports club, an organization specifically associated with sports activities.</rdfs:comment>
+        <rdfs:label>sport club</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Sportsman -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Sportsman">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#belongsTo"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#SportClub"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Person"/>
+        <rdfs:comment>Represents a sportsman, an individual associated with sports activities, such as playing for a sports club.</rdfs:comment>
+        <rdfs:label>sportsman</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#TennisClub -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#TennisClub">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#SportClub"/>
+        <rdfs:comment>Represents a club specifically associated with tennis.</rdfs:comment>
+        <rdfs:label>tennis club</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#TennisPlayer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#TennisPlayer">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#belongsTo"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#TennisClub"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Sportsman"/>
+        <rdfs:comment>Represents an individual who plays tennis and is affiliated with a tennis club.</rdfs:comment>
+        <rdfs:label>tennis player</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Work -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Work">
+        <rdfs:comment>Represents a generic concept for a work, which could include various types of creative or intellectual products.</rdfs:comment>
+        <rdfs:label>work</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Writer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Writer">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#wrote"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#WrittenWork"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Person"/>
+        <rdfs:comment>Represents an individual who writes, authors, or creates written works.</rdfs:comment>
+        <rdfs:label>writer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#WrittenWork -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#WrittenWork">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#ArtisticWork"/>
+        <rdfs:comment>Denotes a work that is written, such as a book, article, or essay.</rdfs:comment>
+        <rdfs:label>written work</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Actor"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Sportsman"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Writer"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#BasketballClub"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#FootballClub"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#TennisClub"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#BasketballPlayer"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#FootballPlayer"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#TennisPlayer"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Book"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Journal"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Poem"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Journalist"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Novelist"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Poet"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Organization"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Person"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/fabad/ontologies/2023/8/untitled-ontology-961#Work"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
