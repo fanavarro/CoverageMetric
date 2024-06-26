@@ -1,11 +1,11 @@
-# CoverageMetric
+# OCALM: Ontology Coverage Analysis through Language Models
 
-CoverageMetric is a Python script for measuring the domain coverage of an OWL ontology. It takes an ontology and free text as input, identify the noun phrases in the free text and tries to match them with ontology classes.
+OCALM is a Python script for measuring the domain coverage of an OWL ontology. It takes an ontology (RDF/XML, OWL/XML or NTriples are accepted) and free text as input, identify the noun phrases in the free text and tries to match them with ontology classes.
 
 
 ## Installation
 
-The script requires Python 3.8, and it was tested in Python 3.8.19 concretely. We recommend to use a virtual environment to execute CoverageMetric.
+The script requires Python 3.8 and a UNIX system. It was tested in Ubuntu and CentOS using Python 3.8.19. We recommend to use a virtual environment to execute OCALM.
 
 ### Python virtual environment
 
@@ -31,15 +31,15 @@ Move to the project folder and create the conda environment:
 
 `conda env create -f conda-environment.yaml`
 
-This will have created an environment called *CoverageMetric*. To activate it, use the following command:
+This will have created an environment called *ocalm*. To activate it, use the following command:
 
-`conda activate CoverageMetric`
+`conda activate ocalm`
 
 ### Test the application
 
 The following command run the application by using a test ontology and a test text corpus, included within the repository:
 
-`python CoverageMetric.py --text_folder resources/test_text/folder1 --ontology resources/test_ontologies/ontology.owl --output_prefix testCoverageMetricResults/ --threads 8`
+`python ocalm.py --text_folder resources/test_text/folder1 --ontology resources/test_ontologies/ontology.owl --output_prefix testCoverageMetricResults/ --threads 8`
 
 If it run successfully, you will see a folder testCoverageMetricResults with the results.
 
@@ -47,7 +47,7 @@ If it run successfully, you will see a folder testCoverageMetricResults with the
 ## Usage
 
 ```
-usage: python CoverageMetric.py [-h] --text_folder TEXT_FOLDER --ontology ONTOLOGY
+usage: python ocalm.py [-h] --text_folder TEXT_FOLDER --ontology ONTOLOGY
                          [--term_freq_threshold TERM_FREQ_THRESHOLD]
                          --output_prefix OUTPUT_PREFIX [--threads THREADS]
 
@@ -55,7 +55,7 @@ optional arguments:
   -h, --help            show this help message and exit
   --text_folder TEXT_FOLDER
                         Folder containing natural language text files.
-  --ontology ONTOLOGY   Ontology file.
+  --ontology ONTOLOGY   Ontology file in RDF/XML, OWL/XML or NTriples.
   --term_freq_threshold TERM_FREQ_THRESHOLD
                         Threshold to filter the detected noun phrases in the
                         free text based on the noun phrase frequency in the
